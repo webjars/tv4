@@ -11,14 +11,14 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>tv4</artifactId>
-    <version>1.1.1</version>
+    <version>1.0.17</version>
     <name>tv4</name>
     <description>A public domain JSON Schema validator for JavaScript</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.1.1</upstream.version>
+        <upstream.version>1.0.17</upstream.version>
         <upstream.url>scm:git:https://github.com/webjars/tv4.git</upstream.url>
         <tv4.sourceUrl>https://github.com/geraintluff/tv4/archive</tv4.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
@@ -83,9 +83,8 @@
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
-                                <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/tv4.js-${upstream.version}/dist" />
-                                </move>
+                                <property name="unzip.dir" value="${project.build.directory}/${project.artifactId}-${upstream.version}" />
+                                <move file="${unzip.dir}/tv4.js" tofile="${destDir}/tv4.js" />
                             </target>
                         </configuration>
                     </execution>
