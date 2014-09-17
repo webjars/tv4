@@ -86,7 +86,7 @@
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/tv4.js-${upstream.version}/dist" />
                                 </move>
-                            <target>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
