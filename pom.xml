@@ -83,8 +83,12 @@
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
-                                <property name="unzip.dir" value="${project.build.directory}/${project.artifactId}-${upstream.version}" />
-                                <move file="${unzip.dir}/tv4.js" tofile="${destDir}/tv4.js" />
+                                <move todir="${destDir}">
+                                    <filelist dir="${project.build.directory}/tv4-${upstream.version}">
+                                        <file name="tv4.js" />
+                                        <file name="tv4.min.js" />
+                                    </filelist>
+                                </move>
                             </target>
                         </configuration>
                     </execution>
