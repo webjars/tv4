@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
     
     <packaging>jar</packaging>
@@ -24,14 +24,6 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
     </properties>
 
-    <developers>
-        <developer>
-            <id>frhd</id>
-            <name>Farhad Omid</name>
-            <email>farhadomid@gmail.com</email>
-        </developer>
-    </developers>
-
     <licenses>
         <license>
             <name>Public Domain</name>
@@ -46,6 +38,14 @@
         <developerConnection>scm:git:https://github.com/webjars/tv4.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <developers>
+        <developer>
+            <id>frhd</id>
+            <name>Farhad Omid</name>
+            <email>farhadomid@gmail.com</email>
+        </developer>
+    </developers>
     
     <build>
         <plugins>
@@ -102,9 +102,27 @@
             </plugin>
 
             <plugin>
+                <groupId>com.googlecode.todomap</groupId>
+                <artifactId>maven-jettygzip-plugin</artifactId>
+                <version>0.0.4</version>
+                <configuration>
+                    <webappDirectory>target/classes</webappDirectory>
+                    <outputDirectory>target/classes</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.6.3</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
@@ -113,6 +131,12 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <targetPath>${destDir}</targetPath>
+            </resource>
+        </resources>            
     </build>
 
 </project>
