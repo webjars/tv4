@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>tv4</artifactId>
-    <version>1.0.17</version>
+    <version>1.0.17-SNAPSHOT</version>
     <name>tv4</name>
     <description>A public domain JSON Schema validator for JavaScript</description>
     <url>http://webjars.org</url>
@@ -44,7 +44,7 @@
         <url>http://github.com/webjars/tv4</url>
         <connection>scm:git:https://github.com/webjars/tv4.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/tv4.git</developerConnection>
-	<tag>1.0.17</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <build>
