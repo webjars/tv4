@@ -11,14 +11,14 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>tv4</artifactId>
-    <version>1.0.18-SNAPSHOT</version>
+    <version>1.1.4-SNAPSHOT</version>
     <name>tv4</name>
     <description>A public domain JSON Schema validator for JavaScript</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.0.17</upstream.version>
+        <upstream.version>1.1.4</upstream.version>
         <tv4.sourceUrl>https://github.com/geraintluff/tv4/archive</tv4.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
     </properties>
